@@ -1,328 +1,243 @@
-// This is the place to place Bootstrap-related CSS customizations.
-// As example you can start by importing the _bootswatch.scss file from one of the
-// theme provided by https://bootswatch.com .
-
-// Minty 4.3.1
+// Solar 4.6.2
 // Bootswatch
+
 
 // Variables ===================================================================
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Montserrat" !default;
-@import url($web-font-path);
-
-// Navbar ======================================================================
-
-.navbar {
-  font-family: $headings-font-family;
-}
-
-.bg-dark {
-  background-color: $secondary !important;
-}
-
-.border-dark {
-  border-color: $secondary !important;
+$web-font-path: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
 }
 
 // Buttons =====================================================================
 
 .btn {
-  font-family: $headings-font-family;
-
-  &,
-  &:hover {
-    color: $white;
-  }
-
-  &-light,
-  &-light:hover {
-    color: $gray-700;
-  }
-
-  &-link,
-  &-link:hover {
-    color: $primary;
-  }
-
-  &-link.disabled:hover {
-    color: $gray-600;
-  }
-
-  &-outline-primary {
-    color: $primary;
-  }
-
-  &-outline-secondary {
-    color: $secondary;
-  }
-
-  &-outline-success {
-    color: $success;
-  }
-
-  &-outline-info {
-    color: $info;
-  }
-
-  &-outline-warning {
-    color: $warning;
-  }
-
-  &-outline-danger {
-    color: $danger;
-  }
-
-  &-outline-dark {
-    color: $dark;
-  }
-
-  &-outline-light {
-    color: $light;
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
+      } @else {
+        background-color: $value;
+      }
+    }
   }
 }
-
-// Typography ==================================================================
 
 // Tables ======================================================================
 
 .table {
-
   &-primary,
   &-secondary,
+  &-dark,
   &-success,
   &-info,
   &-warning,
   &-danger {
-    color: #fff;
+    color: $white;
   }
 
   &-primary {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $primary;
     }
   }
 
   &-secondary {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $secondary;
     }
   }
 
   &-light {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $light;
     }
   }
 
   &-dark {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $dark;
     }
   }
 
   &-success {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $success;
     }
   }
 
   &-info {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $info;
     }
   }
 
   &-danger {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $danger;
     }
   }
 
   &-warning {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $warning;
     }
   }
 
   &-active {
-    &, > th, > td {
+    &,
+    > th,
+    > td {
       background-color: $table-active-bg;
     }
   }
 
   &-hover {
-
     .table-primary:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($primary, 5%);
       }
     }
 
     .table-secondary:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($secondary, 5%);
       }
     }
 
     .table-light:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($light, 5%);
       }
     }
 
     .table-dark:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($dark, 5%);
       }
     }
 
     .table-success:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($success, 5%);
       }
     }
 
     .table-info:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($info, 5%);
       }
     }
 
     .table-danger:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($danger, 5%);
       }
     }
 
     .table-warning:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: darken($warning, 5%);
       }
     }
 
     .table-active:hover {
-      &, > th, > td {
+      &,
+      > th,
+      > td {
         background-color: $table-active-bg;
       }
     }
-  }
 
-  .thead-dark th {
-    background-color: $primary;
-    border-color: $table-border-color;
-    font-family: $headings-font-family;
   }
 }
 
 // Forms =======================================================================
 
-legend {
-  font-family: $headings-font-family;
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $primary;
+  background-image: none;
 }
 
-// Navs ========================================================================
-
-.dropdown-menu {
-  font-family: $font-family-sans-serif;
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: $primary;
 }
 
-.breadcrumb {
-  a {
-    color: $navbar-dark-color;
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  background-color: $primary;
+  background-image: none;
+  border-color: $primary;
+}
+
+.custom-switch {
+  .custom-control-label::after {
+    background-color: rgba(255, 255, 255, 1);
   }
 
-  a:hover {
-    color: $white;
-    text-decoration: none;
+  .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: rgba(255, 255, 255, .75);
   }
 }
 
 // Indicators ==================================================================
 
 .alert {
+  border: none;
   color: $white;
-
-  h1, h2, h3, h4, h5, h6 {
-    color: inherit;
-  }
 
   a,
   .alert-link {
     color: $white;
+    text-decoration: underline;
   }
 
-  &-primary {
-    &, > th, > td {
-      background-color: $primary;
-    }
-  }
-
-  &-secondary {
-    &, > th, > td {
-      background-color: $secondary;
-    }
-  }
-
-  &-success {
-    &, > th, > td {
-      background-color: $success;
-    }
-  }
-
-  &-info {
-    &, > th, > td {
-      background-color: $info;
-    }
-  }
-
-  &-danger {
-    &, > th, > td {
-      background-color: $danger;
-    }
-  }
-
-  &-warning {
-    &, > th, > td {
-      background-color: $warning;
-    }
-  }
-
-  &-dark {
-    &, > th, > td {
-      background-color: $dark;
-    }
-  }
-
-  &-light {
-    &, > th, > td {
-      background-color: $light;
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
+      } @else {
+        background-color: $value;
+      }
     }
   }
 
   &-light {
     &,
-    & a:not(.btn),
-    & .alert-link {
-      color: $body-color;
+    a:not(.btn),
+    .alert-link {
+      color: $body-bg;
     }
-  }
-}
-
-.badge {
-  color: $white;
-
-  &-light {
-    color: $gray-700;
-  }
-}
-
-// Progress bars ===============================================================
-
-// Containers ==================================================================
-
-.card,
-.list-group-item {
-  h1, h2, h3, h4, h5, h6 {
-    color: inherit;
   }
 }
