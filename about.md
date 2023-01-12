@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: about
 ---
 
 ### Choose a name for your repository
