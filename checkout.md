@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /solar/checkout
+permalink: /checkout
 title: Checkout
 ---
 
