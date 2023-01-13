@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /cart
+permalink: /solar/cart
 title: Cart
 ---
 
