@@ -27,4 +27,4 @@ If you purchased a BlueSCSI before 11/04/2022 from us or any authorised seller, 
 
 #### £{{page.cart_price}}
 
-#### [Add to cart!](/solar/cart#{{page.cart_itemid}})
+#### [Add to cart!](/cart#{{page.cart_itemid}})

@@ -42,6 +42,9 @@ function removeItem(itemId){
 var cartHtml = "";
 
 function drawCart(){
+
+if(catalog.name === undefined) {return}
+
 	if (Object.keys(cart).length == 0){
 		cartHtml = "<h2>Cart is empty</h2>";
 	}else{

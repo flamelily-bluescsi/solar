@@ -23,4 +23,4 @@ This is the Desktop Kit version of the BlueSCSI for UK buyers. Some soldering wi
 
 #### £{{page.cart_price}}
 
-#### [Add to cart!](/solar/cart#{{page.cart_itemid}})
+#### [Add to cart!](/cart#{{page.cart_itemid}})
